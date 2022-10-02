@@ -1,10 +1,10 @@
 import { Flex } from "@chakra-ui/react";
 
-const FormContainer = ({ children, width = "lg" }) => {
+const FormContainer = ({ children, width = "xl" }) => {
   return (
     <Flex
       direction="column"
-      boxShadow="md"
+      boxShadow="base"
       rounded="md"
       bgColor="white"
       p="10"

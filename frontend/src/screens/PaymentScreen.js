@@ -49,7 +49,7 @@ const PaymentScreen = () => {
         </Heading>
 
         <form onSubmit={submitHandler}>
-          <FormControl as="fieldset">
+          <FormControl as="fieldset" isRequired>
             <FormLabel as="legend">Select Methods</FormLabel>
             <RadioGroup
               defaultValue={paymentMethodRadio}

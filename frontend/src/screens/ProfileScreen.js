@@ -65,33 +65,32 @@ const ProfileScreen = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    dispatch({ type: USER_PROFILE_RESET });
     if (password !== confirmPassword) {
       setMessage("Passwords do not match");
     } else {
       dispatch(updateUserProfile({ id: user._id, name, email, password }));
+      dispatch({ type: USER_PROFILE_RESET });
     }
   };
 
   return (
     <Grid templateColumns={{ sm: "1fr", md: "1fr 1fr" }} py="5" gap="10">
-      <Flex w="full" alignItems="center" justifyContent="center" py="5">
+      <Flex w="full" alignItems="center" justifyContent="center" px="5">
         <FormContainer>
           <Heading as="h1" mb="8" fontSize="3xl">
-            User Profile
+            User profile
           </Heading>
 
           {error && <Message type="error">{error}</Message>}
           {message && <Message type="error">{message}</Message>}
-          {success && <Message type="success">Profile Updated!</Message>}
+          {success && <Message type="success">Profile updated!</Message>}
 
           <form onSubmit={submitHandler}>
             <FormControl id="name">
-              <FormLabel htmlFor="name">Your Name</FormLabel>
+              <FormLabel>Name</FormLabel>
               <Input
-                id="name"
                 type="text"
-                placeholder="Your full name"
+                placeholder="Enter full name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -100,11 +99,10 @@ const ProfileScreen = () => {
             <Spacer h="3" />
 
             <FormControl id="email">
-              <FormLabel htmlFor="email">Email address</FormLabel>
+              <FormLabel>Email</FormLabel>
               <Input
-                id="email"
                 type="email"
-                placeholder="username@domain.com"
+                placeholder="Enter email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -113,11 +111,10 @@ const ProfileScreen = () => {
             <Spacer h="3" />
 
             <FormControl id="password">
-              <FormLabel htmlFor="password">Password</FormLabel>
+              <FormLabel>Password</FormLabel>
               <Input
-                id="password"
                 type="password"
-                placeholder="************"
+                placeholder="********"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -126,17 +123,18 @@ const ProfileScreen = () => {
             <Spacer h="3" />
 
             <FormControl id="confirmPassword">
-              <FormLabel htmlFor="confirmPassword">Confirm Password</FormLabel>
+              <FormLabel>Confirm Password</FormLabel>
               <Input
-                id="confirmPassword"
-                type="password"
-                placeholder="************"
+                type="confirmpassword"
+                placeholder="********"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </FormControl>
 
-            <Button type="submit" colorScheme="teal" mt="4" isLoading={loading}>
+            <Spacer h="3" />
+
+            <Button type="submit" isLoading={loading} mt="4" colorScheme="teal">
               Update
             </Button>
           </form>
@@ -157,7 +155,7 @@ const ProfileScreen = () => {
           <Table variant="striped">
             <Thead>
               <Tr>
-                <Th>PRODUCT</Th>
+                <Th>ID</Th>
                 <Th>DATE</Th>
                 <Th>TOTAL</Th>
                 <Th>PAID</Th>
@@ -168,8 +166,7 @@ const ProfileScreen = () => {
             <Tbody>
               {orders.map((order) => (
                 <Tr key={order._id}>
-                  <Td>{order.orderItems.map((item, idx) => item.name)}</Td>
-                  {/* <Td>{order._id}</Td> */}
+                  <Td>{order._id}</Td>
                   <Td>{order.createdAt.substring(0, 10)}</Td>
                   <Td>{order.totalPrice}</Td>
                   <Td>

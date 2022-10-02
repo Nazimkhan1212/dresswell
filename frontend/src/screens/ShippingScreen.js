@@ -49,7 +49,7 @@ const ShippingScreen = () => {
 
         <form onSubmit={submitHandler}>
           {/* Address */}
-          <FormControl id="address">
+          <FormControl id="address" isRequired>
             <FormLabel htmlFor="address">Address</FormLabel>
             <Input
               id="address"
@@ -63,7 +63,7 @@ const ShippingScreen = () => {
           <Spacer h="3" />
 
           {/* City */}
-          <FormControl id="city">
+          <FormControl id="city" isRequired>
             <FormLabel htmlFor="city">City</FormLabel>
             <Input
               id="city"
@@ -77,7 +77,7 @@ const ShippingScreen = () => {
           <Spacer h="3" />
 
           {/* Postal Code */}
-          <FormControl id="postalCode">
+          <FormControl id="postalCode" isRequired>
             <FormLabel htmlFor="postalCode">Postal Code</FormLabel>
             <Input
               id="postalCode"
@@ -88,8 +88,10 @@ const ShippingScreen = () => {
             />
           </FormControl>
 
+          <Spacer h="3" />
+
           {/* Country */}
-          <FormControl id="country">
+          <FormControl id="country" isRequired>
             <FormLabel htmlFor="country">Country</FormLabel>
             <Input
               id="country"

@@ -114,7 +114,7 @@ const PlaceOrderScreen = () => {
                           fontWeight="bold"
                           fontSize="xl"
                           as={RouterLink}
-                          to={`/products/${item.product}`}
+                          to={`/product/${item.product}`}
                         >
                           {item.name}
                         </Link>

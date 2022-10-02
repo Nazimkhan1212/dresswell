@@ -20,7 +20,8 @@ import { logout } from "../actions/userActions";
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [show, setShow] = useState(true);
+
+  const [show, setShow] = useState(false);
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;

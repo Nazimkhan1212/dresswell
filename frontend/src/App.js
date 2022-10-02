@@ -26,6 +26,7 @@ const App = () => {
         as="main"
         direction="column"
         mt="72px"
+        minH="xl"
         py="6"
         px="6"
         bgColor="gray.200"
