@@ -16,7 +16,8 @@ Client: React, Redux, Chakra Ui
 Server: Node, Express , Mongoose
 
 Demo
-https://dresswell2.herokuapp.com
+https://dresswell.cyclic.app/
+
 
 Environment Variables
 To run this project, you will need to add the following environment variables to your .env file
